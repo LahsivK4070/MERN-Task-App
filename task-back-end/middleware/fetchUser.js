@@ -1,5 +1,9 @@
 const jwt = require('jsonwebtoken');
-const JWT_SECRET = "Strawhatisprettystrong";
+const dotenv = require("dotenv");
+
+dotenv.config();
+
+const JWT_SECRET = process.env.TOKKEN_SECRET
 
 const fetchuser = (req, res, next) => {
 

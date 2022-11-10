@@ -6,11 +6,14 @@ const router = express.Router();
 const bcrypt = require('bcryptjs');
 const jwt = require('jsonwebtoken');
 const fetchuser = require("../middleware/fetchuser");
+const dotenv = require("dotenv");
 
 router.use(bodyParser.json({ extended: true }));
 router.use(bodyParser.urlencoded({ extended: true }));
 
-const JWT_SECRET = "Strawhatisprettystrong";
+dotenv.config();
+
+const JWT_SECRET = process.env.TOKKEN_SECRET;
 
 // Create a new user
 router.post("/createuser", [
